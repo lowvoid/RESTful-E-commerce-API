@@ -1,0 +1,159 @@
+GET http://localhost:8000/products/ HTTP/1.1
+
+
+###
+GET http://localhost:8000/products/14/ HTTP/1.1
+
+###
+
+DELETE  http://localhost:8000/products/14/ HTTP/1.1
+
+###
+PUT  http://localhost:8000/products/14/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY0NDU2MDA2LCJpYXQiOjE3NjQ0NTU3MDYsImp0aSI6IjA4Mjk2MWEzZGNlMTRlNmViNjZiMTAxNzJjMzFjYmY3IiwidXNlcl9pZCI6IjEifQ.tkd7XO10MMVSA0G5cbe-xxX67CvuCnWIxIeMNa5ib94
+
+{
+    "name": "car",
+    "price": 110.00,
+    "stock": 100,
+    "description": "A brand new Car"
+}
+
+###
+POST  http://localhost:8000/products/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "BMW",
+    "price": 120.00,
+    "stock": 100,
+    "description": "A brand new Car"
+}
+
+###
+
+POST http://localhost:8000/products/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzYzOTA0ODk1LCJpYXQiOjE3NjM5MDQ1OTUsImp0aSI6IjgzNWZmOTJjZGRiYjQyZjBhMmU4MjIyMDEwODQ2YTBjIiwidXNlcl9pZCI6IjEifQ.wvknaiGGKNWNFSUwfrSc1MiTCwhpI3gi-31wxCIZg_8
+
+{
+    "name": "TV",
+    "price": 29.99,
+    "stock": 100,
+    "description": "A brand new TV"
+}
+
+###
+
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "vague",
+    "password" : "estT@1234"
+}
+
+###
+
+POST http://localhost:8000/api/token/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "TestAdmin1234"
+}
+
+
+###
+
+
+POST http://localhost:8000/api/token/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2NDUzNDk0MSwiaWF0IjoxNzY0NDQ4NTQxLCJqdGkiOiI1ZDM0ZGVlYmJlNzM0MDU4YWZiZDI4ZTBlYTI0YTM1MCIsInVzZXJfaWQiOiIxIn0.WcKbN5bAp8YNfCR5RnA2C7NfUxpFG_44VqZmutTGP1Q"
+}
+
+###
+
+GET http://localhost:8000/orders/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5MDIxMTY4LCJpYXQiOjE3NjkwMjA4NjgsImp0aSI6ImZmYzJjYjQwMGU5ZTQyMDZhOWY5YWU3MjJiNGQwN2VkIiwidXNlcl9pZCI6IjEifQ.dP-87cHCiflNv4nGw3ej_68mRLuudxLbzQvM3gFjnkI
+
+{
+
+}
+
+###
+
+GET http://localhost:8000/orders/d15ad330-04db-420e-b4c4-fdd3953ceb3b/ HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5MDIxNTg0LCJpYXQiOjE3NjkwMjEyODQsImp0aSI6IjA5NDAxMmQwNzNmZTQzMzc4YTVhZTQyNTc1YWZlY2Q0IiwidXNlcl9pZCI6IjIifQ.EEkFrTh-aIrr3SSogzE-i5a5JjqDMaSMh-hRtQOqpLQ
+
+{
+
+}
+
+###
+
+###
+POST http://localhost:8000/orders/ HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5MDc0MzU1LCJpYXQiOjE3NjkwNzQwNTUsImp0aSI6ImZiNjkzNDU3ZDJlNTQ5ZGQ5ZmJkYzllMzllNjU5NTQ4IiwidXNlcl9pZCI6IjEifQ.-Vop1zIF4FMV4PIBlIUNwlcEeqVM8UT-53K_MKpseYI
+
+{
+	"status": "PENDING",
+	"items": [
+		{
+				"product": 1,
+				"quantity": 3
+		},		
+        {
+				"product": 14,
+				"quantity": 5
+		}
+	]	
+}
+
+###
+
+GET http://localhost:8000/auth/users/me/ HTTP/1.1
+Authorization: Token 0529527cf88eb8b420296a57d9866365dc6a1595
+
+###
+###
+
+GET http://localhost:8000/auth/users/me/ HTTP/1.1
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzY5MTkxNjk1LCJpYXQiOjE3NjkxODgwOTUsImp0aSI6ImIxYzQ1YTQ5OTJkZTQzZTE5ZDVmYzllNDgyNWY5OTBmIiwidXNlcl9pZCI6IjEifQ.UsZmsX0u2PMV-_wqtcVfABJ7CfnVv1dm3s8uVeXgVjg
+
+###
+POST http://localhost:8000/auth/token/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "TestAdmin1234"
+}
+###
+
+
+POST http://localhost:8000/auth/token/logout HTTP/1.1
+Authorization: Token 0529527cf88eb8b420296a57d9866365dc6a1595
+
+
+###
+POST http://localhost:8000/auth/jwt/create/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "username" : "admin",
+    "password" : "TestAdmin1234"
+}
+### 
+POST http://localhost:8000/auth/jwt/refresh/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "refresh" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc2OTI3NDcwMywiaWF0IjoxNzY5MTg4MzAzLCJqdGkiOiI5ZDgzZGI4MzJhMDA0ZTFiOWFlNjc0NGE3NjhjZGVlZCIsInVzZXJfaWQiOiIxIn0.ID7zUCXVt-YaIZ_OVrA5mixMAd1qSjXMVZiJHgUhAAo"
+}
+
+### 
